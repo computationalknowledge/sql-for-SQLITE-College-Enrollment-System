@@ -1,0 +1,117 @@
+insert into enrollments () values ()
+select * from enrollments;
+
+CREATE TABLE "enrollments" (
+	"enrollmentid"	INTEGER,
+	"studentid"  TEXT,
+	"classid"  TEXT,
+	PRIMARY KEY("enrollmentid" AUTOINCREMENT)
+);
+
+
+
+CREATE TABLE "students" (
+	"studentid"	TEXT,
+	"studentname"	TEXT,
+	PRIMARY KEY("studentid"),
+
+	FOREIGN KEY (studentid)
+	REFERENCES enrollments (studentid)
+);
+
+insert into students (studentid, studentname) values ('C111', 'Peter');
+
+
+delete Database CES;
+
+select * from enrollments;
+delete from enrollments where enrollmentid in (3, 4, 5, 6);
+
+CREATE TABLE "students" (
+	"studentid"	TEXT,
+	"studentname"	TEXT,
+	PRIMARY KEY("studentid"),
+
+	FOREIGN KEY (studentid)
+	REFERENCES enrollments (studentid)
+);
+
+select * from  students;
+
+insert into students (studentid, studentname) values  ('C111', 'Peter');
+
+insert into classes (classid, classname, classdt, instructor) 
+values ('A', 'Java', 'MONEV', 'Bill' );
+insert into classes (classid, classname, classdt, instructor) 
+values ('B', 'Math', 'FRIAM', 'Susan' );
+insert into classes (classid, classname, classdt, instructor) 
+values ('C', 'WebTech', 'WEDPM', 'Larry' );
+insert into classes (classid, classname, classdt, instructor) 
+values ('D', 'Welding', 'THUPM', 'Mario' );
+insert into classes (classid, classname, classdt, instructor) 
+values ('E', 'College Eng', 'THUPM', 'Juno' );
+insert into classes (classid, classname, classdt, instructor) 
+values ('F', 'EC Theory', 'TUEPM', 'Peter' );
+select * from classes;
+
+select * from students;
+
+CREATE TABLE "classes" (
+	"classid"	TEXT,
+	"classname"	TEXT,
+	"datetime"	TEXT,
+    "instructor" TEXT,
+	
+	PRIMARY KEY("classid")
+)
+
+CREATE TABLE "enrollments" (
+	"enrollmentid"	INTEGER,
+	"studentid"	TEXT,
+	"classid"	TEXT,
+	PRIMARY KEY("enrollmentid")
+)
+
+
+insert into enrollments (enrollmentid, studentid, classid) values (2, 'C111', 'A');
+insert into enrollments (studentid, classid) values ('C333', 'B');
+insert into enrollments (studentid, classid) values ('C222', 'D');
+insert into enrollments (studentid, classid) values ('C444', 'C');
+insert into enrollments (studentid, classid) values ('C111', 'F');
+
+delete from enrollments
+where enrollmentid = 1;
+
+select * from enrollments;
+
+
+PRAGMA foreign_keys;
+PRAGMA foreign_keys = ON;
+
+PRAGMA foreign_keys= ON;
+
+
+
+CREATE TABLE "enrollments" (
+	"enrollmentid"	INTEGER,
+	"studentid"	TEXT,
+	"classid"	TEXT,
+	PRIMARY KEY("enrollmentid")
+)
+
+
+CREATE TABLE "enrollments" (
+	"enrollmentid"	INTEGER,
+	"studentid"  TEXT,
+	"classid"  TEXT,
+	PRIMARY KEY("enrollmentid" AUTOINCREMENT)
+);
+
+CREATE TABLE "students" (
+	"studentid"	TEXT,
+	"studentname"	TEXT,
+	PRIMARY KEY("studentid"),
+
+	FOREIGN KEY (studentid)
+	REFERENCES enrollments (studentid)
+);
